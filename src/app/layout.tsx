@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
+import { ReactQueryProvider } from "~/components/ReactQueryProvider";
 
 export const metadata = {
   title: "Create T3 App",
@@ -14,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
-    </html>
+    <ReactQueryProvider>
+      <html lang="en" className={`${GeistSans.variable}`}>
+        <body>{children}</body>
+      </html>
+    </ReactQueryProvider>
   );
 }
