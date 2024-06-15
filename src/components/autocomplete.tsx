@@ -32,8 +32,9 @@ export default function SearchAutocomplete() {
   const [inputValue, setInputValue] = React.useState<string>("");
 
   React.useEffect(() => {
+    // auto refetch when user types
     refetch().catch(console.error);
-  }, [inputValue]);
+  }, [inputValue, refetch]);
 
   return (
     <Autocomplete
