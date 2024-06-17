@@ -42,7 +42,7 @@ export default function SearchAutocomplete() {
       className="w-full"
       id="tags-outlined"
       options={searchOptions ?? []}
-      getOptionLabel={(option) => option.name}
+      getOptionLabel={(option) => option}
       defaultValue={[]}
       filterOptions={(options, _) => options}
       value={value}

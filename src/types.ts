@@ -1,4 +1,1 @@
-export interface Ingredient {
-  name: string;
-  value: string;
-}
+export type Ingredient = string;
