@@ -22,7 +22,7 @@ export default function SearchAutocomplete() {
   const {
     isLoading,
     data: searchOptions,
-    refetch,
+    // refetch,
   } = useQuery<Ingredient[]>({
     queryKey: ["searchAutocomplete"],
     queryFn: fetchIngredients,
@@ -31,14 +31,16 @@ export default function SearchAutocomplete() {
   const [value, setValue] = React.useState<Ingredient[]>([]);
   const [inputValue, setInputValue] = React.useState<string>("");
 
-  React.useEffect(() => {
-    // auto refetch when user types
-    refetch().catch(console.error);
-  }, [inputValue, refetch]);
+  // React.useEffect(() => {
+  //   // auto refetch when user types
+  //   refetch().catch(console.error);
+  // }, [inputValue, refetch]);
 
   return (
     <Autocomplete
       multiple
+      freeSolo
+      autoSelect
       className="w-full"
       id="tags-outlined"
       options={searchOptions ?? []}

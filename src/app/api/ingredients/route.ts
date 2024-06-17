@@ -1,4 +1,4 @@
-import { type ObjectId, type Collection } from "mongodb";
+import { ObjectId, type Collection } from "mongodb";
 import { type NextRequest, NextResponse } from "next/server";
 import { getDB } from "~/db";
 import { type Ingredient } from "~/types";
